@@ -5,13 +5,21 @@ With the help of json txt you can use your txt file as a json file in a very sim
 ## Dependencies 
 - re
 - filemod `pip install filemod` 
+- colored `pip install colored`
 
 ### Installation and Usage
 
 1. use `pip install json_txt`
 2. Make sure that your `pip` version is updated `pip install --upgrade pip`. 
-3. Select the correct package for your environment:
-4. Import the package: ``import json_txt``
+3. Import the package: ``import json_txt``
+
+# Updates
+
+- Arrays are supported now in module but can only hold int and strings.
+- New method added `generate_array(data)` which helps convert txt format of array to convert it into array 
+(if you dont get it its explained in function and module section)
+
+- Edit_data() method is back with new algoritm.
 
 ### Functions in the module 
 
@@ -33,6 +41,11 @@ data every time you make changes to it as it is using txt as its main source
 
 6)Helps you detect weather the var is int or not returs bool
 `json_txt.number_detect(letter)`
+
+7)Helps you convert text array to the real array
+eg - 
+"[23,23,353]"-> [23,23,353]. 
+`json_txt.generate_array(data)`
 
 
 
@@ -60,23 +73,24 @@ Install
 |extract_values|extract values from data|data|
 |extract_data|Extracts key value pair|filename|
 |edit_data|Edit certain key values|filename,key,value_to_change|
+|add_data|Help add data to the txt| filename,new key , new value|
+|generate_array|converts string array to real array |data *(portion of the aray in string)*|
 
 ## Usage/Examples
 
 ### way to write your txt
 
 ```txt
-{ 
-settings:3
-x:4
-truck:32
+{
+    settings: "active"
+    values:244
+    meta:[23,52,53,"work"]
 }
 
 Rules : 
-1) Dont make any sub tree to write your data do it under one tree/{}
-2) Dont put dummy values as it wont consider
-3) Dont use any numericals in variable name
-4)strictly use : when assigning values
+1) Dont make any sub tree to write your data do it under one tree/{}.
+2)dont use ] or [ in arrays.
+4)strictly use : when assigning values.
 ```
 
 ### code
@@ -88,10 +102,6 @@ import json_txt
 file=json_txt.load_txt("main.txt") #load the txt file
 print(json_txt.extract_data(file)) #printing key value pairs
 
-#####editing data 
-json_txt.edit_data("main.txt","settings",33) #changing value of settings
-file=json_txt.load_txt("main.txt")   #again laoding the updated copy
-print(json_txt.extract_data(file)) #printing the updated key values
 
 ####extracting keys and values separately
 print(json_txt.extract_keys(file)) #printing the updated key values
@@ -103,10 +113,13 @@ print(json_txt.extract_values(file)) #printing the updated values values
 ### Output
 
 ```javascript
-{'settings': 3, 'x': 4, 'truck': 32}
-{'settings': 33, 'x': 4, 'truck': 32}
-['settings', 'x', 'truck']
-[33, 4, 32]
+✓ Test 1 pass
+✓ Test 2 pass
+✓ Test 3 pass
+All Test Passed
+{'settings': 'active', 'values': '244', 'meta': [23, 52, 53, 'work']}
+['settings', 'values', 'meta']
+['active', '244', [23, 52, 53, 'work']]
 ```
 
 ## Badges
@@ -120,3 +133,4 @@ print(json_txt.extract_values(file)) #printing the updated values values
 - [@kshitij1235](https://github.com/kshitij1235)
 
   
+
