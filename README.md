@@ -15,34 +15,37 @@ With the help of json txt you can use your txt file as a json file in a very sim
 
 # Updates
 
+- Now boolean values can be stored and even auto detects integers(was a bug actually before).
+- You dont always have to use "" to write string values it automatically detects it and save accordingly 
 - Arrays are supported now in module but can only hold int and strings.
 - New method added `generate_array(data)` which helps convert txt format of array to convert it into array 
 (if you dont get it its explained in function and module section)
 
 - Edit_data() method is back with new algoritm.
+- some bugs are been solved for arrays 
 
 ### Functions in the module 
 
-1)First load the data of the file using load_txt method you need to load 
+- First load the data of the file using load_txt method you need to load 
 data every time you make changes to it as it is using txt as its main source
 `json_txt.load_txt(filename)`
 
-2)extract_keys method helps you extract all the keys from the txt file , and returns them all in the list
+- extract_keys method helps you extract all the keys from the txt file , and returns them all in the list
 `json_txt.extract_keys(data).`
 
-3)extract_values method helps you extract all the values from the specific keys in sequence from the txt file , and returns them in the list.
+- extract_values method helps you extract all the values from the specific keys in sequence from the txt file , and returns them in the list.
 `json_txt.extract_keys(data).`
 
-4)extract_data method helps you extract all the key value pairs from the txt file to dict
+- extract_data method helps you extract all the key value pairs from the txt file to dict
 `json_txt.extract_data(filename)`
 
-5)edit_data method helps you edit key's value pair , it takes filename ,key, and a value to change.
+- edit_data method helps you edit key's value pair , it takes filename ,key, and a value to change.
 `jason_txt.edit_data(filename,key,value_to_change)` 
 
-6)Helps you detect weather the var is int or not returs bool
+- Helps you detect weather the var is int or not returs bool
 `json_txt.number_detect(letter)`
 
-7)Helps you convert text array to the real array
+- Helps you convert text array to the real array
 eg - 
 "[23,23,353]"-> [23,23,353]. 
 `json_txt.generate_array(data)`
@@ -82,14 +85,15 @@ Install
 
 ```txt
 {
-    settings: "active"
+    settings: active
     values:244
-    meta:[23,52,53,"work"]
+    meta:[23,52,53,work]
+    unit_test:True
 }
 
 Rules : 
 1) Dont make any sub tree to write your data do it under one tree/{}.
-2)dont use ] or [ in arrays.
+2)dont use ] or [ inside arrays.
 4)strictly use : when assigning values.
 ```
 
@@ -117,9 +121,9 @@ print(json_txt.extract_values(file)) #printing the updated values values
 ✓ Test 2 pass
 ✓ Test 3 pass
 All Test Passed
-{'settings': 'active', 'values': '244', 'meta': [23, 52, 53, 'work']}
-['settings', 'values', 'meta']
-['active', '244', [23, 52, 53, 'work']]
+{'settings': 'active', 'values': 244, 'meta': [23, 52, 53, 'work'],'unit_test':True}
+['settings', 'values', 'meta','unit_test']
+['active', 244, [23, 52, 53, 'work'],True]
 ```
 
 ## Badges
@@ -133,4 +137,3 @@ All Test Passed
 - [@kshitij1235](https://github.com/kshitij1235)
 
   
-
