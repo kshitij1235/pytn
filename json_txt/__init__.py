@@ -1,4 +1,4 @@
-#version 1.4.4
+# version 1.4.5
 # MIT License
 # Copyright (c) 2021 Kshitij
 
@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 """Extracting keys and values out of txt file and convert it into dic"""
+from json_txt.MainFiles import extract_keys, extract_values
 
 
 def extract_data(data):
@@ -42,3 +43,41 @@ def load_txt(data):
         pass
 
 
+def edit_data(filename, key, value):
+    from filemod import writer, reader
+    from json_txt.SupportFuncs import number_detect
+    if number_detect(value) == False:
+        value = '"'+value+'"'
+    data = reader(filename)
+    keys = extract_keys(list(data))
+    values = extract_values(list(data))
+    print("keys ", keys)
+    print(values)
+    temp = keys.index(key)
+    values.pop(temp)
+    values.insert(temp, value)
+    writing_file = '{ \n'
+    for size in range(len(keys)):
+        writing_file = writing_file+str(keys[size])+":"+str(values[size])+"\n"
+    writing_file = writing_file+"\n"+"}"
+    writer(filename, writing_file, "w")
+    return True
+
+
+def add_data(filename, newkeys, newvalues):
+    """append data into txt file"""
+    from filemod import reader, writer
+    from json_txt.SupportFuncs import number_detect
+    if number_detect(newvalues) == False:
+        newvalues = '"'+newvalues+'"'
+    data = reader(filename)
+    keys = extract_keys(data)
+    values = extract_values(data)
+    keys.append(newkeys)
+    values.append(newvalues)
+    write_file = "{ \n"
+    for size in range(len(keys)):
+        write_file = write_file+str(keys[size])+":"+str(values[size])+"\n"
+    write_file = write_file+"\n"+"}"
+    writer(filename, write_file, "w")
+    return True

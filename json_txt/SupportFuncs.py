@@ -1,4 +1,4 @@
-# json_txt/SupportFuncs.py - version 1.4.4
+# json_txt/SupportFuncs.py - version 1.4.5
 
 
 def number_detect(letter):
@@ -41,14 +41,16 @@ def collab_words_in_list(list):
     return ''.join(list)
 
 
-def allot_values(temp, values):
-    if temp[0] == "[":
-        values.append(list(generate_array(temp)))
-    elif collab_words_in_list(temp)=="True":
-        values.append(True)
-    elif collab_words_in_list(temp)=="False":
-        values.append(False)
-    else:
-        values.append(number_string(collab_words_in_list(temp)))
-    temp.clear()
-    return values
+def allot_values(values):
+    processed_values=[]
+    for elements in values:
+        if elements[0] == "[":
+            processed_values.append(list(generate_array(elements)))
+        elif elements=="True":
+            processed_values.append(True)
+        elif elements=="False":
+            processed_values.append(False)
+        else:
+            processed_values.append(number_string(elements))
+    return processed_values
+

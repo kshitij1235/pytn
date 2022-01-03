@@ -15,14 +15,9 @@ With the help of json txt you can use your txt file as a json file in a very sim
 
 # Updates
 
-- Now boolean values can be stored and even auto detects integers(was a bug actually before).
-- You dont always have to use "" to write string values it automatically detects it and save accordingly 
-- Arrays are supported now in module but can only hold int and strings.
-- New method added `generate_array(data)` which helps convert txt format of array to convert it into array 
-(if you dont get it its explained in function and module section)
-
-- Edit_data() method is back with new algoritm.
-- some bugs are been solved for arrays 
+- you no longer need to use brackets to wite values in.
+- some bugs are been solved and optimizations are made the library
+- now "=" sign can be use in place of ":" is all your choise
 
 ### Functions in the module 
 
@@ -84,17 +79,17 @@ Install
 ### way to write your txt
 
 ```txt
-{
-    settings: active
-    values:244
-    meta:[23,52,53,work]
-    unit_test:True
-}
+
+settings: active
+values:244
+meta:[23,52,53,work]
+unit_test=True
+
 
 Rules : 
 1) Dont make any sub tree to write your data do it under one tree/{}.
 2)dont use ] or [ inside arrays.
-4)strictly use : when assigning values.
+4)strictly use : or = when assigning values.
 ```
 
 ### code
@@ -131,9 +126,12 @@ All Test Passed
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/kshitij1235/Json_txt/blob/main/LICENSE)
 
+
+
   
 ## Authors
 
 - [@kshitij1235](https://github.com/kshitij1235)
+- [website](https://sites.google.com/view/jsontxt)
 
   
