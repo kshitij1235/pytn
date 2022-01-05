@@ -15,7 +15,7 @@ With the help of json txt you can use your txt file as a json file in a very sim
 
 # Updates
 
-- you no longer need to use brackets to wite values in.
+- you no longer need to use brackets to write values in.
 - some bugs are been solved and optimizations are made the library
 - now "=" sign can be use in place of ":" is all your choise
 
