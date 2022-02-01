@@ -112,10 +112,6 @@ print(json_txt.extract_values(file)) #printing the updated values values
 ### Output
 
 ```javascript
-✓ Test 1 pass
-✓ Test 2 pass
-✓ Test 3 pass
-All Test Passed
 {'settings': 'active', 'values': 244, 'meta': [23, 52, 53, 'work'],'unit_test':True}
 ['settings', 'values', 'meta','unit_test']
 ['active', 244, [23, 52, 53, 'work'],True]
