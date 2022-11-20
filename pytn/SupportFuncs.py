@@ -1,4 +1,4 @@
-# json_txt/SupportFuncs.py - version 1.4.5
+# json_txt/SupportFuncs.py - version 1.4.6
 
 
 def number_detect(letter):
@@ -26,10 +26,10 @@ def generate_array(data):
         if array_elements in ["["]:
             continue
         elif array_elements in [",", "]"]:
-            if number_detect(collab_words_in_list(array_temp)):
-                array.append(int(collab_words_in_list(array_temp)))
+            if number_detect(collab_words_in_list(array_temp).strip()):
+                array.append(int(collab_words_in_list(array_temp).strip()))
             else:
-                array.append(collab_words_in_list(array_temp))
+                array.append(collab_words_in_list(array_temp).strip())
             array_temp.clear()
         else:
             array_temp.append(array_elements)
