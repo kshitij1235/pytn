@@ -118,7 +118,7 @@ print(extract_values(file)) #printing the updated values values
 ## Badges
 
 
-[![GNU License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/kshitij1235/pytn/blob/main/LICENSE)
+[![GNU License]([https://img.shields.io/apm/l/atomic-design-ui.svg?](https://img.shields.io/badge/License-GNU%20Affero%20General%20Public%20License-orange))](https://github.com/kshitij1235/pytn/blob/main/LICENSE)
 
 
 
