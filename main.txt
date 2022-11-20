@@ -1,6 +1,0 @@
-{ 
-array:deactive isgood
-num:[123, 21, 42, 'kshitij', 2]
-fox:True
-hello:woow
-}
