@@ -6,7 +6,7 @@ pytn stands for - python text notation
 
 ## Dependencies 
 
-- filemod `pip install pytn` 
+- filemod `pip install filemod` 
 
 ### Installation and Usage
 
