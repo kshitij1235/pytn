@@ -40,23 +40,6 @@ def extract_keys(filename):
     return res
 
 
-# def extract_values(filename):
-#     """extract values from file"""
-
-#     temp = []
-#     values = []
-#     txt_file_data=list(reader(filename))
-#     for index ,element in enumerate(txt_file_data):
-#         if element == ":":
-#             for index in range(index, len(txt_file_data)):
-#                 if txt_file_data[index] == "\n":
-#                     values.append(collab_words_in_list(temp))
-#                     temp.clear()
-#                     break
-#                 elif txt_file_data[index] not in [":", "'", " ", '"', "}", '\r']:
-#                     temp.append(txt_file_data[index])
-#     values = allot_values(values)
-#     return values
 
 def extract_values(filename):
     """extract values from file"""
@@ -99,9 +82,8 @@ def edit_data(filename, key, value):
     edit value  from the file
     """
     
-    data = list(reader(filename))
-    keys = extract_keys(data)
-    values = extract_values(data)
+    keys = extract_keys(filename)
+    values = extract_values(filename)
 
     # gettting value of element to change
 
@@ -126,9 +108,6 @@ def edit_data(filename, key, value):
 
 def add_data(filename, newkeys, newvalues):
     """append data into txt file"""
-
-    # get the file data
-    data = reader(filename)
 
     # extract keys and values
     keys = extract_keys(filename)

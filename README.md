@@ -6,7 +6,7 @@ pytn stands for - python text notation
 
 ## Dependencies 
 
-- filemod `pip install filemod` 
+- filemod `pip install pytn` 
 
 ### Installation and Usage
 
@@ -16,10 +16,7 @@ pytn stands for - python text notation
 
 # Updates
 
-- Improved speed 
-- String is better and can recognized spaces between text better
-- major bugs solved
-- now you can remove keys and values 
+-edit_data()-> bug fix
 
 ### Functions in the module 
 
